@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\Route;
 | add some description here....
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/recipes', 'RecipesController@first');
+Route::get('/recipes', 'RecipesController@index');
+Route::post('/recipes', 'RecipesController@add');
+Route::get('/recipes/{id}', 'RecipesController@detail');
+Route::patch('/recipes/{id}', 'RecipesController@update');
+Route::delete('/recipes/{id}', 'RecipesController@delete');
